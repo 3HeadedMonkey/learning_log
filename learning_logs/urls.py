@@ -1,3 +1,5 @@
+"""Defines URL patterns for learning_logs. """
+
 """learning_log URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,8 +17,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import re_path, include
+from . import views
 
 urlpatterns = [
-    re_path(r'admin/', admin.site.urls),
-    re_path(r'learning_logs/', include(('learning_logs.urls', 'learning_logs'), namespace ='learning_logs')),
-    ]
+    # Home page
+    re_path(r'^$', views.index, name='index'),
+]
